@@ -1,7 +1,7 @@
 data.raw["recipe"]["coal-liquefaction"].ingredients =
 {
-  {type="item", name="coal", amount=10},
-  {type="fluid", name="heavy-oil", amount=10},
+  {type="item", name="coal", amount=15},
+  {type="fluid", name="crude-oil", amount=5},
   {type="fluid", name="steam", amount=100}
 }
 
