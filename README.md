@@ -13,3 +13,4 @@ Instead of forking my own builds, I'm putting patches in here for my own functio
 ## Future ideas:
 * Bob's Modules combined sets recipes to require lvl+1 input modules, and other expensive goodies. Raw Productivity is OP, gotta make it work for it.
 * Rework Beacon power usage as xxKw * area covered * module slots
+* Redo Geothermal power to use vanilla heat exchanger, have hotspots output at varying temps.
