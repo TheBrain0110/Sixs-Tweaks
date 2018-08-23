@@ -14,7 +14,7 @@ for _, ore in pairs(ores) do
       probability = 1
     }
   }
-  data.raw["resource"][ore.."-patch"].minable.mining_time = data.raw["resource"][ore.."-patch"].minable.mining_time * 40
+  data.raw["resource"][ore.."-patch"].minable.mining_time = data.raw["resource"][ore].minable.mining_time * 40
   if data.raw["resource"][ore.."-patch"].minable.fluid_amount
     then data.raw["resource"][ore.."-patch"].minable.fluid_amount = data.raw["resource"][ore.."-patch"].minable.fluid_amount * 10
   end
