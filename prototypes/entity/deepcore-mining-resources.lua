@@ -14,10 +14,10 @@ for _, ore in pairs(ores) do
       probability = 1
     }
   }
-  data.raw["resource"][ore.."-patch"].minable.mining_time = data.raw["resource"][ore.."-patch"].minable.mining_time * 60
+  data.raw["resource"][ore.."-patch"].minable.mining_time = data.raw["resource"][ore.."-patch"].minable.mining_time * 40
   if data.raw["resource"][ore.."-patch"].minable.fluid_amount
     then data.raw["resource"][ore.."-patch"].minable.fluid_amount = data.raw["resource"][ore.."-patch"].minable.fluid_amount * 10
   end
-  data.raw["resource"][ore.."-patch"].infinite_depletion_amount = 1
+  data.raw["resource"][ore.."-patch"].infinite_depletion_amount = 0.1
   data.raw["resource"][ore.."-patch"].minimum = 2500
 end

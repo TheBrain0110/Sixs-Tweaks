@@ -2,31 +2,31 @@ data.raw["recipe"]["vtk-deepcore-mining-ore-chunk-refining"].results =
 {
     {
         name = "vtk-deepcore-mining-iron-ore-chunk",
-        probability = 0.5,
-        amount_min = 2,
-        amount_max = 6
+        probability = 0.667,
+        amount_min = 3,
+        amount_max = 8
     },
     {
         name = "vtk-deepcore-mining-copper-ore-chunk",
-        probability = 0.5,
-        amount_min = 2,
-        amount_max = 6
+        probability = 0.6,
+        amount_min = 3,
+        amount_max = 8
     },
     {
         name = "vtk-deepcore-mining-coal-chunk",
         probability = 0.4,
-        amount_min = 1,
-        amount_max = 5
+        amount_min = 2,
+        amount_max = 6
     },
     {
         name = "vtk-deepcore-mining-stone-chunk",
-        probability = 0.4,
-        amount_min = 1,
-        amount_max = 5
+        probability = 0.5,
+        amount_min = 2,
+        amount_max = 6
     },
     {
         name = "vtk-deepcore-mining-uranium-ore-chunk",
-        probability = 0.25,
+        probability = 0.333,
         amount_min = 1,
         amount_max = 5
     },
