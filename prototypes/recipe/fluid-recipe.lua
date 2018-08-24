@@ -7,7 +7,7 @@ data.raw["recipe"]["coal-liquefaction"].ingredients =
 
 data.raw["recipe"]["coal-liquefaction"].results =
 {
-  {type="fluid", name="heavy-oil", amount=25}
+  {type="fluid", name="heavy-oil", amount=40}
 }
 
 data.raw["recipe"]["coal-liquefaction"].energy_required = 5

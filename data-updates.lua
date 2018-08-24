@@ -3,7 +3,7 @@ if mods["Stormwalls"] then
 end
 
 if mods["bobmodules"] then 
-    require("prototypes.recipe.modules")
+--    require("prototypes.recipe.modules")
 end
 
 if mods["vtk-deep-core-mining"] then

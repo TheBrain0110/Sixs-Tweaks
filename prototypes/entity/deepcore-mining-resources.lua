@@ -18,6 +18,7 @@ for _, ore in pairs(ores) do
   if data.raw["resource"][ore.."-patch"].minable.fluid_amount
     then data.raw["resource"][ore.."-patch"].minable.fluid_amount = data.raw["resource"][ore.."-patch"].minable.fluid_amount * 10
   end
-  data.raw["resource"][ore.."-patch"].infinite_depletion_amount = 0.1
+  data.raw["resource"][ore.."-patch"].infinite_depletion_amount = 1 -- Values < 1 cause no depletion
   data.raw["resource"][ore.."-patch"].minimum = 2500
+  data.raw["resource"][ore.."-patch"].normal = 10000 -- Not sure if this has any effect, patch min / max on spawn is handled in mod settings
 end
