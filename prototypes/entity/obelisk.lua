@@ -1,11 +1,71 @@
 -- shamelessly copied from "Laser Beam Turrets" mod
 local color = {r = 0.3, g = 0.2, b = 1.0}
+
+local obelisk_scatter_laser = {
+    type = "projectile",
+    name = "obelisk-scatter-laser",
+    flags = {"not-on-map"},
+    acceleration = 0.03,
+    action = {
+      { -- Types/TriggerItem
+        type = "direct",
+        force = "enemy",
+        action_delivery =
+        { -- Types/TriggerDelivery
+          type = "instant",
+          target_effects =
+          { 
+            { -- Types/TriggerEffect
+              type = "create-entity",
+              entity_name = "laser-bubble"
+            },
+            { -- Types/TriggerEffect
+              type = "damage",
+              damage = { amount = 50, type = "laser"}
+            }
+          }
+        }
+      },
+      { -- Types/TriggerItem
+        type = "area",
+        radius = 1.5,
+        force = "enemy",
+        action_delivery =
+        { -- Types/TriggerDelivery
+          type = "instant",
+          target_effects = {
+            { -- Types/TriggerEffect
+              type = "create-sticker",
+              sticker = "electroshock-pulse-sticker", -- From MSI, should add as dependency. Or duplicate myself.
+            },
+            { -- Types/TriggerEffect
+              type = "damage",
+              damage = { amount = 30, type = "electric"}
+            }
+          }
+        }
+      }
+    },
+    light = {intensity = 0.75, size = 10},
+    animation =
+    {
+      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      tint = color,
+      frame_count = 1,
+      width = 12,
+      height = 33,
+      priority = "high",
+      blend_mode = "additive"
+    },
+    speed = 0.15
+}
+
 local obelisk_beam = {
     type = "beam",
     name = "laser-beam-big-blue",
     flags = {"not-on-map"},
     width = 0.8,
-    damage_interval = 180,
+    damage_interval = 60,
     light = {intensity = 0.9, size = 10},
     working_sound = {
       {
@@ -22,68 +82,77 @@ local obelisk_beam = {
       }
     },
     action = {
-      type = "direct",
-      action_delivery = {
-        type = "instant",
-        target_effects = {
-          {
-            type = "damage",
-            damage = {amount = 450, type = "laser"}
+      { -- Types/TriggerItem
+        type = "direct",
+        action_delivery = 
+        { -- Types/TriggerDelivery
+          type = "instant",
+          target_effects = {
+            { -- Types/TriggerEffect
+              type = "damage",
+              damage = {amount = 450, type = "laser"}
+            }
+          }
+        }
+      },
+      { -- Types/TriggerItem
+        type = "area",
+        radius = 3,
+        force = "enemy",
+        action_delivery =
+        { -- Types/TriggerDelivery
+          type = "instant",
+          target_effects = {
+            { -- Types/TriggerEffect
+              type = "create-sticker",
+              sticker = "electroshock-pulse-sticker", -- From MSI, should add as dependency. Or duplicate myself.
+            },
+            { -- Types/TriggerEffect
+              type = "damage",
+              damage = { amount = 90, type = "electric"}
+            }
           }
         }
       }
     },
     head = {
-      filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
-      line_length = 16,
-      tint = color,
-      frame_count = 12,
-      x = 45 * 4,
-      width = 45,
-      height = 1,
-      priority = "high",
-      animation_speed = 0.5,
-      blend_mode = "additive-soft"
+        filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+        line_length = 16,
+        tint = color,
+        frame_count = 12,
+        x = 45 * 4,
+        width = 45,
+        height = 1,
+        priority = "high",
+        animation_speed = 0.1,
+        blend_mode = "additive-soft"
     },
     start = {
-      filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
-      line_length = 16,
-      tint = color,
-      frame_count = 12,
-      x = 45 * 4,
-      width = 45,
-      height = 1,
-      priority = "high",
-      animation_speed = 0.5,
-      blend_mode = "additive-soft"
+        filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+        line_length = 16,
+        tint = color,
+        frame_count = 12,
+        x = 45 * 4,
+        width = 45,
+        height = 1,
+        priority = "high",
+        animation_speed = 0.1,
+        blend_mode = "additive-soft"
     },
-	ending = {
-      filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
-      line_length = 16,
-      tint = color,
-      frame_count = 12,
-      x = 45 * 4,
-      width = 45,
-      height = 1,
-      priority = "high",
-      animation_speed = 0.5,
-      blend_mode = "additive-soft"
+    ending = {
+        filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+        line_length = 16,
+        tint = color,
+        frame_count = 12,
+        x = 45 * 4,
+        width = 45,
+        height = 1,
+        priority = "high",
+        animation_speed = 0.5,
+        blend_mode = "additive-soft"
     },
     tail = {
-      filename = "__Laser_Beam_Turrets__/laser-beam-tail-3.png",
-      line_length = 16,
-      tint = color,
-      frame_count = 12,
-      x = 48 * 4,
-      width = 48,
-      height = 24,
-      priority = "high",
-      animation_speed = 0.5,
-      blend_mode = "additive-soft"
-    },
-    body = {
-      {
-        filename = "__Laser_Beam_Turrets__/laser-beam-body-2.png",
+        filename = "__Laser_Beam_Turrets__/laser-beam-tail-3.png",
         line_length = 16,
         tint = color,
         frame_count = 12,
@@ -93,14 +162,27 @@ local obelisk_beam = {
         priority = "high",
         animation_speed = 0.5,
         blend_mode = "additive-soft"
-      }
+    },
+    body = {
+        {
+            filename = "__Laser_Beam_Turrets__/laser-beam-body-2.png",
+            line_length = 16,
+            tint = color,
+            frame_count = 12,
+            x = 48 * 4,
+            width = 48,
+            height = 24,
+            priority = "high",
+            animation_speed = 0.5,
+            blend_mode = "additive-soft"
+        }
     }
 }
 local obelisk_turret = {
     type = "electric-turret",
     name = "obelisk-turret",
     localised_name="Obelisk of Light",
-	localised_description="A high-powered laser turret with massive damage, long range, but high energy requirements and slow rate of fire",
+	  localised_description="A high-powered laser turret with massive damage, long range, but high energy requirements and slow rate of fire",
     icon = "__base__/graphics/icons/laser-turret.png",
     icon_size = 32,
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
@@ -225,7 +307,7 @@ local obelisk_turret = {
       projectile_center = {-0.09375, -0.2},
       projectile_creation_distance = 1.4,
       range = 64,
-      min_range = 10,
+      min_range = 16,
       damage_modifier = 1,
       ammo_type =
       {
@@ -235,36 +317,29 @@ local obelisk_turret = {
         action = 
         { -- Types/Trigger
           { -- Types/TriggerItem
-            type = "line",
-            force = "enemy",
-            range = 64,
-            width = 1.5,
+            type = "direct",
             action_delivery = 
             { -- Types/TriggerDelivery
                 type = "beam",
                 beam = "laser-beam-big-blue",
                 max_length = 64,
-                duration = 180,
+                duration = 60,
                 source_offset = {0, -1.3}
             }
           },
           { -- Types/TriggerItem
-            type = "area",
-            radius = 3,
-            repeat_count = 3,
+            type = "cluster",
+            cluster_count = 8,
+            distance = 3,
+            distance_deviation = 2,
             action_delivery =
             { -- Types/TriggerDelivery
-              type = "instant",
-              target_effects = {
-                { -- Types/TriggerEffect
-                  type = "create-sticker",
-                  sticker = "electroshock-pulse-sticker",
-                },
-                { -- Types/TriggerEffect
-                  type = "damage",
-                  damage = { amount = 30, type = "laser"}
-                }
-              }
+                type = "projectile",
+                projectile = "obelisk-scatter-laser",
+                duration = 20,
+                direction_deviation = 0.75,
+                starting_speed = 0.3,
+                starting_speed_deviation = 0.2
             }
           }
         }
@@ -330,4 +405,4 @@ local obelisk_tech = {
     order="a-e-b",
   }
 
-  data:extend({obelisk_beam, obelisk_turret, obelisk_item, obelisk_recipe, obelisk_tech})
+  data:extend({obelisk_scatter_laser, obelisk_beam, obelisk_turret, obelisk_item, obelisk_recipe, obelisk_tech})
