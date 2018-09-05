@@ -82,13 +82,14 @@ chunk_refining_recipe_updater(
 chunk_refining_recipe_updater(
     "uranium-ore", 
     "uranium-ore",
-    8,  
+    16,  
     sulfuricacidname, 
     1000 
 )
 
 data.raw["mining-drill"]["vtk-deepcore-mining-drill"].energy_usage = "2.5MW"
 data.raw["mining-drill"]["vtk-deepcore-mining-drill"].energy_source.emissions = 0.05
+data.raw["mining-drill"]["vtk-deepcore-mining-drill"].input_fluid_box.base_area = 20
 
 data.raw["mining-drill"]["vtk-deepcore-mining-drill-advanced"].energy_usage = "25MW"
 data.raw["mining-drill"]["vtk-deepcore-mining-drill-advanced"].energy_source.emissions = 0.025
