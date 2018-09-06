@@ -1,5 +1,6 @@
-data.raw["resource"]["vtk-deepcore-mining-crack"].fluid_amount = 50
-data.raw["resource"]["vtk-deepcore-mining-crack"].required_fluid = "heavy-oil"
+data.raw["resource"]["vtk-deepcore-mining-crack"].minable.required_fluid = "heavy-oil"
+data.raw["resource"]["vtk-deepcore-mining-crack"].minable.fluid_amount = 50
+-- Fun fact: Current mining speeds with a +60% productivity bonus will exactly fill a blue belt
 
 local ores = {"iron-ore", "copper-ore", "coal", "stone", "uranium-ore"}
 
