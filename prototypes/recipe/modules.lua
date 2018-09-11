@@ -20,3 +20,8 @@ for _, moduletype in pairs(moduletypes) do
         table.insert(data.raw.recipe[moduletype..i.."-combine"].ingredients, {moduletype..i-1, 1})
     end
 end
+
+for _, beacon in pairs(data.raw.beacon) do
+    -- Scale beacon power usage
+    beacon.energy_usage = (24 * beacon.module_specification.module_slots * beacon.supply_area_distance^2) .."kW"
+end
