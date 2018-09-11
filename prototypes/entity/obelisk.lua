@@ -1,5 +1,6 @@
 -- shamelessly copied from "Laser Beam Turrets" mod
 local color = {r = 0.3, g = 0.2, b = 1.0}
+local long_desc = "A high-powered laser turret with long range & massive damage, but high energy requirements and slow rate of fire"
 
 local obelisk_scatter_laser = {
     type = "projectile",
@@ -181,8 +182,8 @@ local obelisk_beam = {
 local obelisk_turret = {
     type = "electric-turret",
     name = "obelisk-turret",
-    localised_name="Obelisk of Light",
-	  localised_description="A high-powered laser turret with massive damage, long range, but high energy requirements and slow rate of fire",
+    localised_name = "Obelisk of Light",
+	  localised_description = long_desc,
     icon = "__base__/graphics/icons/laser-turret.png",
     icon_size = 32,
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
@@ -352,8 +353,8 @@ local obelisk_turret = {
 local obelisk_item = {
     type = "item",
     name = "obelisk-turret",
-    localised_name="Obelisk of Light",
-	localised_description="A high-powered laser turret with massive damage, long range, but high energy requirements and slow rate of fire",
+    localised_name = "Obelisk of Light",
+	  localised_description = long_desc,
     icon = "__base__/graphics/icons/laser-turret.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
@@ -361,7 +362,7 @@ local obelisk_item = {
     order = "b[turret]-b[obelisk-turret]",
     place_result = "obelisk-turret",
     stack_size = 10
-  }
+}
 
 local obelisk_recipe = {
     type = "recipe",
@@ -374,21 +375,21 @@ local obelisk_recipe = {
       {"laser-turret", 10},
       {"processing-unit", 20},
       {"battery", 50},
-    --  {"uranium-fuel-cell", 1},
+      {"uranium-fuel-cell", 1},
       {type="fluid", name= "lubricant", amount = 1000}
     },
     result = "obelisk-turret"
 }
 
 local obelisk_tech = {
-    type = "technology",
-    name="obelisk-turrets",
-	localised_name="Obelisk of Light",
-	localised_description="A high-powered laser turret with massive damage, long range, but high energy requirements and slow rate of fire",
-    icon = "__base__/graphics/technology/laser-turrets.png",
+  type = "technology",
+  name = "obelisk-turrets",
+	localised_name = "Obelisk of Light",
+	localised_description = long_desc,
+  icon = "__base__/graphics/technology/laser-turrets.png",
 	icon_size = 128,
-    effects = {{type = "unlock-recipe", recipe="obelisk-turret"}},
-    prerequisites = {"laser-turrets", "military-4", "nuclear-power"},
+  effects = {{type = "unlock-recipe", recipe="obelisk-turret"}},
+  prerequisites = {"laser-turrets", "military-4", "nuclear-power"},
 	unit =
     {
       count = 500,
