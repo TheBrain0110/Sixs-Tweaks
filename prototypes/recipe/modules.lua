@@ -2,7 +2,11 @@ local moduletypes = {"raw-speed-module-", "green-module-", "raw-productivity-mod
 
 for _, moduletype in pairs(moduletypes) do
     for i = 2,8 do
-        table.insert(data.raw.recipe[moduletype..i].ingredients, {moduletype..i-1, 1})
-        table.insert(data.raw.recipe[moduletype..i.."-combine"].ingredients, {moduletype..i-1, 1})
+        -- Change Raw Ingredients recipe to require 2x level-1 combined modules, from 1x
+        bobmods.lib.recipe.remove_ingredient(moduletype..i, moduletype..i-1)
+        bobmods.lib.recipe.add_ingredient(moduletype..i, {moduletype..i-1, 2})
+
+        -- Add module level-1 to ingredients for Combined recipes
+        bobmods.lib.recipe.add_ingredient(moduletype..i.."-combine", {moduletype..i-1, 1})
     end
 end
