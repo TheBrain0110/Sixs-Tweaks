@@ -2,13 +2,13 @@ data.raw["recipe"]["vtk-deepcore-mining-ore-chunk-refining"].results =
 {
     {
         name = "vtk-deepcore-mining-iron-ore-chunk",
-        probability = 0.667,
+        probability = 0.6,
         amount_min = 2,
         amount_max = 6
     },
     {
         name = "vtk-deepcore-mining-copper-ore-chunk",
-        probability = 0.6,
+        probability = 0.667,
         amount_min = 2,
         amount_max = 6
     },
@@ -26,9 +26,9 @@ data.raw["recipe"]["vtk-deepcore-mining-ore-chunk-refining"].results =
     },
     {
         name = "vtk-deepcore-mining-uranium-ore-chunk",
-        probability = 0.333,
+        probability = 0.25,
         amount_min = 1,
-        amount_max = 3
+        amount_max = 2
     },
 }
 
@@ -84,7 +84,7 @@ chunk_refining_recipe_updater(
     "uranium-ore",
     16,  
     sulfuricacidname, 
-    1000 
+    1000
 )
 
 data.raw["mining-drill"]["vtk-deepcore-mining-drill"].energy_usage = "2.5MW"
