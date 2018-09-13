@@ -10,3 +10,7 @@ if mods["vtk-deep-core-mining"] then
     require("prototypes.entity.deepcore-mining-items")
     require("prototypes.entity.deepcore-mining-resources")
 end
+
+if mods["Texugo_TA-miners"] then
+    require("prototypes.entity.ta-miners")
+end
