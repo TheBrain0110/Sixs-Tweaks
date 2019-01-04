@@ -55,10 +55,6 @@ local obelisk_scatter_laser = {
           type = "instant",
           target_effects = {
             { -- Types/TriggerEffect
-              type = "create-sticker",
-              sticker = "electroshock-pulse-sticker", -- From MSI, should add as dependency. Or duplicate myself.
-            },
-            { -- Types/TriggerEffect
               type = "damage",
               damage = { amount = 30, type = "electric"}
             }
