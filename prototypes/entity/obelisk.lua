@@ -2,6 +2,25 @@
 local color = {r = 0.3, g = 0.2, b = 1.0}
 local long_desc = "A high-powered laser turret with long range & massive damage, but high energy requirements and slow rate of fire"
 
+local obelisk_shock_sticker = {
+  type = "sticker",
+  name = "obelisk-shock-sticker",
+    animation = {
+      scale = 1,
+      filename = "__Sixs-Tweaks__/graphics/obelisk-shock-sticker.png",
+      animation_speed = 3.14,
+      frame_count = 16*6,
+      line_length = 16,
+      width = 800/16,
+      height = 240/6,
+     -- priority = "extra-high",
+    },
+    duration_in_ticks = 60*10, --75
+    --flags ={"not-on-map"},
+    target_movement_modifier = 0.25,
+    damage_per_tick = { amount = 2, type = "electric" }
+}
+
 local obelisk_scatter_laser = {
     type = "projectile",
     name = "obelisk-scatter-laser",
@@ -106,7 +125,7 @@ local obelisk_beam = {
           target_effects = {
             { -- Types/TriggerEffect
               type = "create-sticker",
-              sticker = "electroshock-pulse-sticker", -- From MSI, should add as dependency. Or duplicate myself.
+              sticker = "obelisk-shock-sticker", -- Copied from MSI's electroshock-pulse-sticker
             },
             { -- Types/TriggerEffect
               type = "damage",
@@ -406,4 +425,4 @@ local obelisk_tech = {
     order="a-e-b",
   }
 
-  data:extend({obelisk_scatter_laser, obelisk_beam, obelisk_turret, obelisk_item, obelisk_recipe, obelisk_tech})
+data:extend({obelisk_shock_sticker, obelisk_scatter_laser, obelisk_beam, obelisk_turret, obelisk_item, obelisk_recipe, obelisk_tech})
