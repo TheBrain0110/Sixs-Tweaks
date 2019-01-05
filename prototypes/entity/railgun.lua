@@ -95,7 +95,7 @@ local railgun_shot = {
         affects_target = false,
         action = {
           type = "area",
-          radius = 5,
+          radius = 7,
           force = "enemy",
           action_delivery = {
             type = "instant",
@@ -103,6 +103,10 @@ local railgun_shot = {
               {
                 type = "create-sticker",
                 sticker = "obelisk-shock-sticker"
+              },
+              {
+                type = "push-back", -- Appears to be non-functional. Oh well.
+                distance = 7
               }
             }
           }
