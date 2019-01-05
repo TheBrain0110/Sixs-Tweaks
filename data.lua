@@ -1,4 +1,5 @@
 require("prototypes.equipment.equipment")
 require("prototypes.entity.turrets")
 require("prototypes.entity.obelisk")
+require("prototypes.entity.railgun")
 require("prototypes.recipe.fluid-recipe")
