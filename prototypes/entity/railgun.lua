@@ -8,23 +8,22 @@ local railgun_tech = {
   icon = "__base__/graphics/technology/cannon-speed.png",
   icon_size = 128,
   effects = {
-    {type = "unlock-recipe", recipe="railgun"},
-    {type = "unlock-recipe", recipe="railgun-dart"}
+    {type = "unlock-recipe", recipe = "railgun"},
+    {type = "unlock-recipe", recipe = "railgun-dart"}
   },
   prerequisites = {"obelisk-turrets", "uranium-ammo", "artillery"},
   unit = {
     count = 600,
-    ingredients =
-    {
+    ingredients = {
       {"science-pack-1", 2},
       {"science-pack-2", 2},
       {"military-science-pack", 3},
       {"science-pack-3", 1},
-      {"high-tech-science-pack", 1},
-      },
-      time = 60
+      {"high-tech-science-pack", 1}
     },
-    order="a-e-b",
+    time = 60
+  },
+  order = "a-e-b"
 }
 
 local electric_blast_wave = {
@@ -38,17 +37,17 @@ local electric_blast_wave = {
       direction_count = 1,
       filename = "__Sixs-Tweaks__/graphics/electroshock-pulse-explosion.png", -- Borrowed from MSI
       animation_speed = 1,
-      frame_count = 7*5,
+      frame_count = 7 * 5,
       line_length = 5,
-      width = 1675/5,
-      height = 2044/7,
-      priority = "extra-high",
+      width = 1675 / 5,
+      height = 2044 / 7,
+      priority = "extra-high"
     }
   },
   light = {
     intensity = 1,
     size = 25,
-    color = {a = 1,b = 1,g = 0.3,r = 0.1},
+    color = {a = 1, b = 1, g = 0.3, r = 0.1}
   }
 }
 
@@ -66,7 +65,7 @@ local railgun_ingredients = {
 local railgun_round_ingredients = {
   {"uranium-cannon-shell", 1},
   {"processing-unit", 2},
-  {"battery", 5},
+  {"battery", 5}
 }
 
 local railgun_shot = {
@@ -94,35 +93,32 @@ local railgun_shot = {
       {
         type = "nested-result",
         affects_target = false,
-        action =
-        {
+        action = {
           type = "area",
           radius = 5,
           force = "enemy",
-          action_delivery =
-          {
+          action_delivery = {
             type = "instant",
             target_effects = {
               {
                 type = "create-sticker",
-                sticker = "obelisk-shock-sticker",
-              },
+                sticker = "obelisk-shock-sticker"
+              }
             }
           }
         }
       }
     },
-    action_delivery =
-    {
+    action_delivery = {
       type = "instant",
       target_effects = {
         {
           type = "damage",
-          damage = { amount = 600, type="physical"}
+          damage = {amount = 600, type = "physical"}
         },
         {
           type = "damage",
-          damage = { amount = 200, type="laser"}
+          damage = {amount = 200, type = "laser"}
         },
         {
           type = "create-sticker",

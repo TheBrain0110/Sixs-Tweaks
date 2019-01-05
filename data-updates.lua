@@ -1,16 +1,16 @@
 if mods["Stormwalls"] then
-    require("prototypes.entity.stormwall")
+  require("prototypes.entity.stormwall")
 end
 
-if mods["bobmodules"] then 
-    require("prototypes.recipe.modules")
+if mods["bobmodules"] then
+  require("prototypes.recipe.modules")
 end
 
 if mods["vtk-deep-core-mining"] then
-    require("prototypes.entity.deepcore-mining-items")
-    require("prototypes.entity.deepcore-mining-resources")
+  require("prototypes.entity.deepcore-mining-items")
+  require("prototypes.entity.deepcore-mining-resources")
 end
 
 if mods["Texugo_TA-miners"] then
-    require("prototypes.entity.ta-miners")
+  require("prototypes.entity.ta-miners")
 end
