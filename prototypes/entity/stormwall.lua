@@ -9,8 +9,8 @@ for _, color in ipairs(stormwalls) do
     },
     {
       type = "impact",
-      decrease = 45,
-      percent = 100
+      decrease = 5,
+      percent = 10
     },
     {
       type = "explosion",
