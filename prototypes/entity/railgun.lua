@@ -11,7 +11,7 @@ local railgun_tech = {
     {type = "unlock-recipe", recipe = "railgun"},
     {type = "unlock-recipe", recipe = "railgun-dart"}
   },
-  prerequisites = {"obelisk-turrets", "uranium-ammo", "artillery"},
+  prerequisites = {"obelisk-turrets", "uranium-ammo", "cannon-shell-speed-4"},
   unit = {
     count = 600,
     ingredients = {
