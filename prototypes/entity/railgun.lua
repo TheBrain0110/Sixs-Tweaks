@@ -138,6 +138,7 @@ data.raw["gun"]["railgun"].attack_parameters.range = 30
 
 data.raw["ammo"]["railgun-dart"].flags = {"goes-to-main-inventory"}
 data.raw["ammo"]["railgun-dart"].magazine_size = null
+data.raw["ammo"]["railgun-dart"].stack_size = 10
 data.raw["ammo"]["railgun-dart"].ammo_type = railgun_shot
 
 data.raw["recipe"]["railgun"].energy_required = 120
