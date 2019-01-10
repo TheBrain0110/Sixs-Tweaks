@@ -15,7 +15,7 @@ local obelisk_shock_sticker = {
     height = 240 / 6
     -- priority = "extra-high",
   },
-  duration_in_ticks = 60 * 10, --75
+  duration_in_ticks = 60 * 15,
   --flags ={"not-on-map"},
   target_movement_modifier = 0.25,
   damage_per_tick = {amount = 2, type = "electric"}

@@ -51,7 +51,11 @@ local electric_blast_wave = {
   }
 }
 
-data:extend({railgun_tech, electric_blast_wave})
+local mini_shockwave = electric_blast_wave
+mini_shockwave.name = "electric-blast-wave-mini"
+mini_shockwave.animations[1].scale = 0.5
+
+data:extend({railgun_tech, electric_blast_wave, mini_shockwave})
 
 local railgun_ingredients = {
   {"rocket-launcher", 1},
@@ -74,8 +78,8 @@ local railgun_shot = {
   clamp_position = true,
   action = {
     type = "line",
-    range = 32,
-    width = 2.25,
+    range = 40,
+    width = 3.5,
     source_effects = {
       {
         type = "create-explosion",
@@ -95,7 +99,7 @@ local railgun_shot = {
         affects_target = false,
         action = {
           type = "area",
-          radius = 7,
+          radius = 9,
           force = "enemy",
           action_delivery = {
             type = "instant",
@@ -117,12 +121,16 @@ local railgun_shot = {
       type = "instant",
       target_effects = {
         {
-          type = "damage",
-          damage = {amount = 600, type = "physical"}
+          type = "create-explosion",
+          entity_name = "electric-blast-wave-mini"
         },
         {
           type = "damage",
-          damage = {amount = 200, type = "laser"}
+          damage = {amount = 800, type = "physical"}
+        },
+        {
+          type = "damage",
+          damage = {amount = 400, type = "laser"}
         },
         {
           type = "create-sticker",
@@ -145,3 +153,13 @@ data.raw["recipe"]["railgun"].energy_required = 120
 data.raw["recipe"]["railgun"].ingredients = railgun_ingredients
 data.raw["recipe"]["railgun-dart"].energy_required = 30
 data.raw["recipe"]["railgun-dart"].ingredients = railgun_round_ingredients
+
+local cannon_mods = { 0.2, 0.2, 0.3, 0.5, 1.0 }
+
+for lvl, mod in pairs(cannon_mods) do
+  table.insert(data.raw.technology["cannon-shell-damage-"..lvl].effects, {
+    type = "ammo-damage",
+    ammo_category = "railgun",
+    modifier = mod
+  })
+end
