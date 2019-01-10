@@ -27,3 +27,9 @@ data.raw["active-defense-equipment"]["personal-laser-defense-equipment"].attack_
     }
   }
 }
+
+-- Not technically equipment, but fits here well enough and I don't feel like starting a new 2-line file
+for _, bot in pairs(data.raw["construction-robot"]) do -- catch all the mod-added bots too
+bot.resistances = { { type = "fire", decrease = 25, percent = 95 } }
+bot.flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map", "not-repairable"}
+end
