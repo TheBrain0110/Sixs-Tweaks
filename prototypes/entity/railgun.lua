@@ -51,9 +51,30 @@ local electric_blast_wave = {
   }
 }
 
-local mini_shockwave = electric_blast_wave
-mini_shockwave.name = "electric-blast-wave-mini"
-mini_shockwave.animations[1].scale = 0.5
+local mini_shockwave = {
+  type = "explosion",
+  name = "electric-blast-wave-mini",
+  flags = {"not-on-map"},
+  animations = {
+    {
+      scale = 0.5,
+      axially_symmetrical = false,
+      direction_count = 1,
+      filename = "__Sixs-Tweaks__/graphics/electroshock-pulse-explosion.png", -- Borrowed from MSI
+      animation_speed = 1,
+      frame_count = 7 * 5,
+      line_length = 5,
+      width = 1675 / 5,
+      height = 2044 / 7,
+      priority = "extra-high"
+    }
+  },
+  light = {
+    intensity = 1,
+    size = 25,
+    color = {a = 1, b = 1, g = 0.3, r = 0.1}
+  }
+}
 
 data:extend({railgun_tech, electric_blast_wave, mini_shockwave})
 
