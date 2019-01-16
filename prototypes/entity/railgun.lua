@@ -164,6 +164,7 @@ local railgun_shot = {
 
 data.raw["gun"]["railgun"].flags = {"goes-to-main-inventory"} -- Remove "hidden" flag
 data.raw["gun"]["railgun"].attack_parameters.range = 30
+data.raw["gun"]["railgun"].attack_parameters.movement_slow_down_factor = 0.33
 
 data.raw["ammo"]["railgun-dart"].flags = {"goes-to-main-inventory"}
 data.raw["ammo"]["railgun-dart"].magazine_size = null
@@ -175,11 +176,20 @@ data.raw["recipe"]["railgun"].ingredients = railgun_ingredients
 data.raw["recipe"]["railgun-dart"].energy_required = 30
 data.raw["recipe"]["railgun-dart"].ingredients = railgun_round_ingredients
 
-local cannon_mods = { 0.2, 0.2, 0.3, 0.5, 1.0 }
+local cannon_damage_mods = { 0.2, 0.2, 0.3, 0.5, 1.0 }
+local cannon_speed_mods = { 0.1, 0.1, 0.1, 0.2, 0.5 } -- Given that cannon-shooting-speed is a prereq for railgun in the first place, the required levels shouldn't increase the base stats much
 
-for lvl, mod in pairs(cannon_mods) do
+for lvl, mod in pairs(cannon_damage_mods) do
   table.insert(data.raw.technology["cannon-shell-damage-"..lvl].effects, {
     type = "ammo-damage",
+    ammo_category = "railgun",
+    modifier = mod
+  })
+end
+
+for lvl, mod in pairs(cannon_speed_mods) do
+  table.insert(data.raw.technology["cannon-shell-speed-"..lvl].effects, {
+    type = "gun-speed",
     ammo_category = "railgun",
     modifier = mod
   })
