@@ -1,9 +1,9 @@
-if mods["Stormwalls"] then
-  require("prototypes.entity.stormwall")
+if mods["Krastorio2"] then
+  require("prototypes.recipe.landfill")
 end
 
-if mods["bobmodules"] then
-  require("prototypes.recipe.modules")
+if mods["Stormwalls"] then
+  require("prototypes.entity.stormwall")
 end
 
 if mods["vtk-deep-core-mining"] then

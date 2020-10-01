@@ -16,15 +16,6 @@ for _, ore in pairs(surface.find_entities_filtered({type="resource"})) do
     end
 end
 
--- Disable secondary set of combined module recipes
-/c local moduletypes = {"raw-speed-module-", "green-module-", "raw-productivity-module-"}
-
-for _, moduletype in pairs(moduletypes) do
-    for i = 2,8 do
-        game.forces.player.recipes[moduletype..i].enabled = false
-    end
-end
-
 -- Get Mapgen autoplace (resource) settings
 /c game.player.print(serpent.block(surface.map_gen_settings.autoplace_controls))
 -- or

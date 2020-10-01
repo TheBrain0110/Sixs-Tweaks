@@ -3,14 +3,12 @@ When playing the game with mods just isn't good enough for your particular taste
 
 Instead of forking my own builds, I'm putting patches in here for my own functionality.
 
+Mostly for personal use, but uploaded to the Mod Portal to be multiplayer-sync-compatible.
+
+Originally written for some mostly-obsolete tweaks to VTK Deep Core mining, laser turrets and Bob's Modules in the 0.16/0.17 days. Most of that stripped out for 1.0 and focusing mostly on Krastorio2.
+See the Legacy branch on GitHub for other old stuff.
+
 ## Currently includes:
-* A change to Coal Liquifaction to produce only Heavy Oil
+* Made the Krastorio2 landfill-from-sand recipe more efficient for the work of processing stone into sand, and adds wood as an ingredient
 
-## Currently in forked builds, to reimplement as a patch here:
-* Deep Core mining processing changes
-* Personal Laser damage category, laser turret drain rate / buffer size
-
-## Future ideas:
-* Bob's Modules combined sets recipes to require lvl+1 input modules, and other expensive goodies. Raw Productivity is OP, gotta make it work for it.
-* Rework Beacon power usage as xxKw * area covered * module slots
-* Redo Geothermal power to use vanilla heat exchanger, have hotspots output at varying temps.
+* More to come as I feel the need, now that I've set up the base...

@@ -1,10 +1,10 @@
 {
   "name": "Sixs-Tweaks",
-  "version": "0.1",
+  "version": "0.2",
   "title": "Six's Tweaks",
   "author": "TheBrain0110",
   "homepage": "",
   "description": "A mod to mod the mods I want to modify a bit. Yo dawg.",
-  "factorio_version": "0.16",
-  "dependencies": ["base >= 0.16", "? vtk-deep-core-mining"]
+  "factorio_version": "1.0",
+  "dependencies": ["base >= 1.0", "? Krastorio2 >= 1.0.0"]
 }
