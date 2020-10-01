@@ -4,4 +4,4 @@ data.raw["recipe"]["landfill-2"].ingredients =
     { "wood", 10 },
     { type = "fluid", name = "water", amount = 50 }
 }
-data.raw["recipe"]["landfill-2"].localized_description = {"More efficient landfill made from mulch"},
+data.raw["recipe"]["landfill-2"].localized_description = {"More efficient landfill made from mulch"}
