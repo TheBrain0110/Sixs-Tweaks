@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: ????
+  Combat Balancing:
+    - Buff Cannon Turret Range
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
-Date: 01. 10. 2020
+Date: 2020-10-01
   Changes:
     - Initial packaging of 1.0 branch for Mod Portal upload.
     - Currently consists of just a simple tweak to the Krastorio2 sand-to-landfill recipe.
