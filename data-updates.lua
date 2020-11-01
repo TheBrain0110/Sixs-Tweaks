@@ -18,3 +18,7 @@ end
 if mods["vtk-cannon-turret"] then
   require("prototypes.entity.turrets")
 end
+
+if mods["Logistic-Gun-Turret"] then
+  data.raw.recipe["turret-interface"].ingredients[2] = { "logistic-chest-storage", 1 }
+end
