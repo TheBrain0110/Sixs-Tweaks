@@ -16,7 +16,7 @@ if mods["Texugo_TA-miners"] then
 end
 
 if mods["vtk-cannon-turret"] then
-  require("prototypes.entity.turrets")
+  require("prototypes.entity.vtk-cannon-turret")
 end
 
 if mods["Logistic-Gun-Turret"] then
