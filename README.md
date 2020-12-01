@@ -14,6 +14,7 @@ See the Legacy branch on GitHub for other old stuff.
 * Productivity bonus to Krastorio2 Mk 2 & 3 Mining drills, since I helped get that feature implemented to the game last year.
 * A Deep Oil Pumpjack with a +500% productivity bonus but low base speed, so your oil patches last longer at a given rate.
 * Range buff to VortiK's Cannon Turrets
+* Alternative "Obelisk" Laser turret, with high damage / long range / low rate of fire. (Currently still using pre-0.17 code from Klonan's "Laser Beam Turrets" mod until I get around to updating it for the new native laser beam styles...)
 * More to come as I feel the need, now that I've set up the base...
 
 ## TODO:

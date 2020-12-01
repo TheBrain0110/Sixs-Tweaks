@@ -1,3 +1,5 @@
+-- NOTE: Most of this is deprecated, since 0.17 added beam lasers in vanilla.
+
 -- shamelessly copied from "Laser Beam Turrets" mod
 local color = {r = 0.3, g = 0.2, b = 1.0}
 local long_desc = "A high-powered laser turret with long range & massive damage, but high energy requirements and slow rate of fire"
@@ -88,15 +90,7 @@ local obelisk_beam = {
   light = {intensity = 0.9, size = 10},
   working_sound = {
     {
-      filename = "__Laser_Beam_Turrets__/laser-beam-01.ogg",
-      volume = 0.9
-    },
-    {
-      filename = "__Laser_Beam_Turrets__/laser-beam-02.ogg",
-      volume = 0.9
-    },
-    {
-      filename = "__Laser_Beam_Turrets__/laser-beam-03.ogg",
+      filename = "__Sixs-Tweaks__/sound/obelray1.ogg",
       volume = 0.9
     }
   },
@@ -140,7 +134,7 @@ local obelisk_beam = {
     }
   },
   head = {
-    filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+    filename = "__Sixs-Tweaks__/graphics/laser-beam-head-2.png",
     line_length = 16,
     tint = color,
     frame_count = 12,
@@ -152,7 +146,7 @@ local obelisk_beam = {
     blend_mode = "additive-soft"
   },
   start = {
-    filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+    filename = "__Sixs-Tweaks__/graphics/laser-beam-head-2.png",
     line_length = 16,
     tint = color,
     frame_count = 12,
@@ -164,7 +158,7 @@ local obelisk_beam = {
     blend_mode = "additive-soft"
   },
   ending = {
-    filename = "__Laser_Beam_Turrets__/laser-beam-head-2.png",
+    filename = "__Sixs-Tweaks__/graphics/laser-beam-head-2.png",
     line_length = 16,
     tint = color,
     frame_count = 12,
@@ -176,7 +170,7 @@ local obelisk_beam = {
     blend_mode = "additive-soft"
   },
   tail = {
-    filename = "__Laser_Beam_Turrets__/laser-beam-tail-3.png",
+    filename = "__Sixs-Tweaks__/graphics/laser-beam-tail-3.png",
     line_length = 16,
     tint = color,
     frame_count = 12,
@@ -189,7 +183,7 @@ local obelisk_beam = {
   },
   body = {
     {
-      filename = "__Laser_Beam_Turrets__/laser-beam-body-2.png",
+      filename = "__Sixs-Tweaks__/graphics/laser-beam-body-2.png",
       line_length = 16,
       tint = color,
       frame_count = 12,
@@ -202,116 +196,29 @@ local obelisk_beam = {
     }
   }
 }
-local obelisk_turret = {
-  type = "electric-turret",
-  name = "obelisk-turret",
-  localised_name = "Obelisk of Light",
-  localised_description = long_desc,
-  icon = "__base__/graphics/icons/laser-turret.png",
-  icon_size = 32,
-  flags = {"placeable-player", "placeable-enemy", "player-creation"},
-  minable = {mining_time = 5, result = "obelisk-turret"},
-  max_health = 2500,
-  corpse = "medium-remnants",
-  collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-  selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-  rotation_speed = 0.001,
-  preparing_speed = 0.005,
-  dying_explosion = "medium-explosion",
-  folding_speed = 0.005,
-  energy_source = {
+
+local obelisk_turret = table.deepcopy(data.raw["electric-turret"]["laser-turret"])
+
+obelisk_turret.name = "obelisk-turret"
+obelisk_turret.localised_name = "Obelisk of Light"
+obelisk_turret.localised_description = long_desc
+obelisk_turret.minable = {mining_time = 5, result = "obelisk-turret"}
+obelisk_turret.max_health = 2500
+obelisk_turret.collision_box = {{-1.2, -1.2}, {1.2, 1.2}}
+obelisk_turret.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
+obelisk_turret.rotation_speed = 0.001
+obelisk_turret.preparing_speed = 0.005
+obelisk_turret.folding_speed = 0.005
+obelisk_turret.energy_source = {
     type = "electric",
     buffer_capacity = "80128kJ",
     input_flow_limit = "11128kW",
     drain = "128kW",
     usage_priority = "primary-input"
-  },
-  folded_animation = {
-    layers = {
-      laser_turret_extension {frame_count = 1, line_length = 1},
-      laser_turret_extension_shadow {frame_count = 1, line_length = 1},
-      laser_turret_extension_mask {frame_count = 1, line_length = 1}
-    }
-  },
-  preparing_animation = {
-    layers = {
-      laser_turret_extension {},
-      laser_turret_extension_shadow {},
-      laser_turret_extension_mask {}
-    }
-  },
-  prepared_animation = {
-    layers = {
-      {
-        filename = "__base__/graphics/entity/laser-turret/laser-turret-gun.png",
-        line_length = 8,
-        width = 68,
-        height = 68,
-        frame_count = 1,
-        axially_symmetrical = false,
-        direction_count = 64,
-        shift = {-0.03125, -1}
-      },
-      {
-        filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-mask.png",
-        flags = {"mask"},
-        line_length = 8,
-        width = 54,
-        height = 44,
-        frame_count = 1,
-        axially_symmetrical = false,
-        apply_runtime_tint = true,
-        direction_count = 64,
-        shift = {-0.03125, -1.3125}
-      },
-      {
-        filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-shadow.png",
-        line_length = 8,
-        width = 88,
-        height = 52,
-        frame_count = 1,
-        axially_symmetrical = false,
-        direction_count = 64,
-        draw_as_shadow = true,
-        shift = {1.5, 0}
-      }
-    }
-  },
-  folding_animation = {
-    layers = {
-      laser_turret_extension {run_mode = "backward"},
-      laser_turret_extension_shadow {run_mode = "backward"},
-      laser_turret_extension_mask {run_mode = "backward"}
-    }
-  },
-  base_picture = {
-    layers = {
-      {
-        filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
-        priority = "high",
-        width = 98,
-        height = 82,
-        axially_symmetrical = false,
-        direction_count = 1,
-        frame_count = 1,
-        shift = {0.015625, 0.03125}
-      },
-      {
-        filename = "__base__/graphics/entity/laser-turret/laser-turret-base-mask.png",
-        flags = {"mask"},
-        line_length = 1,
-        width = 54,
-        height = 46,
-        axially_symmetrical = false,
-        apply_runtime_tint = true,
-        direction_count = 1,
-        frame_count = 1,
-        shift = {-0.046875, -0.109375}
-      }
-    }
-  },
-  vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
-  attack_parameters = {
+  }
+  --attacking_speed = 0.1,
+obelisk_turret.glow_light_intensity = 1.0 -- This is the new bit for 0.17 builtin beam lasers
+obelisk_turret.attack_parameters = {
     type = "projectile",
     ammo_category = "electric",
     cooldown = 480,
@@ -355,11 +262,8 @@ local obelisk_turret = {
           }
         }
       }
-    },
-    sound = make_laser_sounds()
-  },
-  call_for_help_radius = 40
-}
+    }
+  }
 
 local obelisk_item = {
   type = "item",
@@ -367,8 +271,7 @@ local obelisk_item = {
   localised_name = "Obelisk of Light",
   localised_description = long_desc,
   icon = "__base__/graphics/icons/laser-turret.png",
-  icon_size = 32,
-  flags = {"goes-to-quickbar"},
+  icon_size = 64,
   subgroup = "defensive-structure",
   order = "b[turret]-b[obelisk-turret]",
   place_result = "obelisk-turret",
@@ -403,11 +306,11 @@ local obelisk_tech = {
   unit = {
     count = 500,
     ingredients = {
-      {"science-pack-1", 2},
-      {"science-pack-2", 2},
+      {"automation-science-pack", 2},
+      {"logistic-science-pack", 2},
       {"military-science-pack", 3},
-      {"science-pack-3", 1},
-      {"high-tech-science-pack", 1}
+      {"chemical-science-pack", 1},
+      {"utility-science-pack", 1}
     },
     time = 30
   },
