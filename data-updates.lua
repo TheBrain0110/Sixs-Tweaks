@@ -1,5 +1,6 @@
 if mods["Krastorio2"] then
   require("prototypes.recipe.landfill")
+  require("prototypes.entity.kr-miners")
 end
 
 if mods["Stormwalls"] then
