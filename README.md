@@ -16,6 +16,7 @@ See the Legacy branch on GitHub for other old stuff.
 * Range buff to VortiK's Cannon Turrets
 * Alternative "Obelisk" Laser turret, with high damage / long range / low rate of fire. (Currently still using pre-0.17 code from Klonan's "Laser Beam Turrets" mod until I get around to updating it for the new native laser beam styles...)
 * More to come as I feel the need, now that I've set up the base...
+* Walls self-repair out of combat, keeping bots out of the line of fire.
 
 ## TODO:
 * Make Krastorio gun ammo types direct upgrades of each other, stacking damage types.
