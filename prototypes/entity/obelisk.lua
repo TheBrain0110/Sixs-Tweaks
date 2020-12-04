@@ -229,7 +229,7 @@ obelisk_turret.attack_parameters = {
     damage_modifier = 1,
     ammo_type = {
       type = "projectile",
-      category = "laser-turret",
+      category = "laser",
       energy_consumption = "80MJ",
       action = {
         -- Types/Trigger
@@ -299,10 +299,10 @@ local obelisk_tech = {
   name = "obelisk-turrets",
   localised_name = "Obelisk of Light",
   localised_description = long_desc,
-  icon = "__base__/graphics/technology/laser-turrets.png",
-  icon_size = 128,
+  icon = "__base__/graphics/technology/laser-turret.png",
+  icon_size = 256, icon_mipmaps = 4,
   effects = {{type = "unlock-recipe", recipe = "obelisk-turret"}},
-  prerequisites = {"laser-turrets", "military-4", "nuclear-power"},
+  prerequisites = {"laser-turret", "military-4", "nuclear-power"},
   unit = {
     count = 500,
     ingredients = {

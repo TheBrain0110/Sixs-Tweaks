@@ -48,7 +48,7 @@ local deep_pumpjack_tech = {
   name = "deep-pumpjack",
   localised_name = "Deep Pumpjacks",
   localised_description = long_desc,
-  icon_size = 128,
+  icon_size = 256, icon_mipmaps = 4,
   icon = "__base__/graphics/technology/oil-gathering.png",
   effects = {
     {
