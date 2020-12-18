@@ -14,7 +14,7 @@ function doRepairs()
             if (unit.valid) and (unit.get_health_ratio() < 1) then
                 -- unit.health = unit.health + (unit.prototype.max_health / 60)
                 --log("Healing ID " .. k)
-                unit.health = unit.health + 10
+                unit.health = unit.health + 1
             else
                 --log("Removing ID " .. k)
                 global.RepairQueue[k] = nil
@@ -36,4 +36,4 @@ script.on_event(
     {{filter = "type", type = "wall"}, {filter = "type", type = "gate"}}
 )
 
-script.on_nth_tick(60, doRepairs)
+script.on_nth_tick(5, doRepairs)

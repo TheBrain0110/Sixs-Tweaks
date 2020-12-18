@@ -21,3 +21,6 @@ See the Legacy branch on GitHub for other old stuff.
 ## TODO:
 * Make Krastorio gun ammo types direct upgrades of each other, stacking damage types.
 * Make other turret types inherit gun turret damage research buff?
+* Increase nuclear & antimatter artillery / bomb damage to be effective vs high-tier Rampant units
+* Add a reinforced plate wall & imersite plate crystalline wall with 3-5k HP and high physical / low acid resistances, and vice-versa.
+* Series of landmines for different damage types, some based on capsules

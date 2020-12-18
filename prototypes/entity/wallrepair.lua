@@ -5,7 +5,7 @@ end
 
 for _, wall in pairs(data.raw["gate"]) do
     table.insert(wall.flags, "not-repairable")
-    -- wall.healing_per_tick = 1 --wall.max_health / 3600
+    -- wall.healing_per_tick = wall.max_health / 3600 -- This doesn't work because walls aren't "active" entities
 end
 
 for _, bot in pairs(data.raw["construction-robot"]) do

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.3
+Date: 2020-12-18
+  Combat Balancing:
+    - Reduce Cannon/Double Cannon turret ranges to 50/40
+    - Increase Krastorio Railgun turret range to 70
+    - Change wall repair from 10HP/60 ticks (1sec) to 1HP/5 ticks (1/12sec)
+  Features:
+    - Add High Temp Oil Processing, using nuclear reactor steam for more Petroleum
+---------------------------------------------------------------------------------------------------
 Version: 0.3.2
 Date: 2020-12-04
   Features:
