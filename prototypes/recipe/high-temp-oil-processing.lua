@@ -4,7 +4,8 @@ if mods["Krastorio2"] then
     steamtemp = 415
 end
 
-local long_desc = "Utilizing high temperature & pressure steam in the refinement process allows for further yield improvements of lighter oil fractions"
+local long_desc =
+    "Utilizing high temperature & pressure steam in the refinement process allows for further yield improvements of lighter oil fractions"
 
 local high_temp_refining_recipe = {
     type = "recipe",
@@ -59,8 +60,18 @@ local high_temp_refining_tech = {
 }
 
 data:extend(
-  {
-    high_temp_refining_recipe,
-    high_temp_refining_tech
-  }
+    {
+        high_temp_refining_recipe,
+        high_temp_refining_tech
+    }
 )
+
+function allow_productivity(recipe_name)
+    for _, prototype in pairs(data.raw["module"]) do
+        if prototype.limitation and string.find(prototype.name, "productivity", 1, true) then
+            table.insert(prototype.limitation, recipe_name)
+        end
+    end
+end
+
+allow_productivity("high-temp-oil-processing")
