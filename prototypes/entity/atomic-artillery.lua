@@ -1,7 +1,9 @@
 if not mods["Krastorio2"] then
     data:extend({
+    {
         type = "damage-type",
         name = "radioactive"
+    }
     })
 end
 
@@ -149,4 +151,24 @@ for i = 5,10 do
         ammo_category = "artillery-shell",
         modifier = 0.2,
     })
+end
+
+
+-- Make landmines immune to ALL damage. This will be bad for PvP scenarios, but I'll deal with that if it ever becomes relevant.
+for _, mine in pairs(data.raw["land-mine"]) do
+    for damageType, _ in pairs(data.raw["damage-type"]) do
+        mine.resistances[damageType] = {
+            type = damageType,
+            percent = 100
+        }
+    end
+end
+
+if mods["Krastorio2"] then
+    for _, wall in pairs(data.raw["wall"]) do
+        table.insert(wall.resistances, {
+            type = kr-explosion,
+            percent = 100
+        })
+    end
 end

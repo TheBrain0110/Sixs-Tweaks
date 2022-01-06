@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.6
+Date: 2022-01-06
+  Changes:
+    - Make landmines immune to ALL damage. This will be bad for PvP scenarios, but I'll deal with that if it ever becomes relevant.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.5
 Date: 2022-01-06
   Combat Balancing:
