@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.5
+Date: 2022-01-06
+  Combat Balancing:
+    - Tweaked values to be slightly less OP while still useful against high-tier enemies & nests
+---------------------------------------------------------------------------------------------------
 Version: 0.3.4
 Date: 2022-01-06
   Combat Balancing:
