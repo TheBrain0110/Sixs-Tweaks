@@ -17,10 +17,11 @@ See the Legacy branch on GitHub for other old stuff.
 * Alternative "Obelisk" Laser turret, with high damage / long range / low rate of fire. (Currently still using pre-0.17 code from Klonan's "Laser Beam Turrets" mod until I get around to updating it for the new native laser beam styles...)
 * More to come as I feel the need, now that I've set up the base...
 * Walls self-repair out of combat, keeping bots out of the line of fire.
+* Increase nuclear & antimatter artillery / bomb damage to be effective vs high-tier Rampant units
 
 ## TODO:
 * Make Krastorio gun ammo types direct upgrades of each other, stacking damage types.
 * Make other turret types inherit gun turret damage research buff?
-* Increase nuclear & antimatter artillery / bomb damage to be effective vs high-tier Rampant units
 * Add a reinforced plate wall & imersite plate crystalline wall with 3-5k HP and high physical / low acid resistances, and vice-versa.
 * Series of landmines for different damage types, some based on capsules
+* Make landmines immune to friendly fire and/or most damage types
