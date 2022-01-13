@@ -26,3 +26,4 @@ See the Legacy branch on GitHub for other old stuff.
 * Make other turret types inherit gun turret damage research buff?
 * Add a reinforced plate wall & imersite plate crystalline wall with 3-5k HP and high physical / low acid resistances, and vice-versa.
 * Series of landmines for different damage types, some based on capsules
+* Tone down the recently-very-expensive rocket fuel recipies

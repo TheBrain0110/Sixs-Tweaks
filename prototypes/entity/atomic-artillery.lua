@@ -2,10 +2,11 @@ if not mods["Krastorio2"] then
     data:extend({
     {
         type = "damage-type",
-        name = "radioactive"
+        name = "radioactive" -- Probably need to add a localization entry for this, but... meh.
     }
     })
 end
+
 
 data.raw["artillery-projectile"]["artillery-projectile"].action.action_delivery.target_effects[1].action.action_delivery.target_effects = {
     {
@@ -18,6 +19,8 @@ data.raw["artillery-projectile"]["artillery-projectile"].action.action_delivery.
     },
 }
 
+
+if mods["Krastorio2"] then
 -- Krastorio's projectile effects definitions are flat, not sub-nested, and the indexes of the damage values may be subject to change.
 -- TODO: use a lookup for the damage table entries specifically instead of using indexes.
 data.raw["artillery-projectile"]["atomic-artillery"].action.action_delivery.target_effects[7] = {
@@ -47,6 +50,7 @@ table.insert(data.raw["artillery-projectile"]["antimatter-artillery-projectile"]
     type = "damage",
     damage = { amount = 5000, type = "radioactive" }
 })
+end
 
 
 data.raw["projectile"]["atomic-rocket"].action.action_delivery.target_effects[7] = {
@@ -62,6 +66,8 @@ table.insert(data.raw["projectile"]["atomic-rocket"].action.action_delivery.targ
     damage = { amount = 3000, type = "radioactive" }
 })
 
+
+if mods["Krastorio2"] then
 data.raw["projectile"]["antimatter-rocket-projectile"].action.action_delivery.target_effects[7] = {
     type = "damage",
     damage = { amount = 2000, type = "physical" }
@@ -74,6 +80,7 @@ table.insert(data.raw["projectile"]["antimatter-rocket-projectile"].action.actio
     type = "damage",
     damage = { amount = 7000, type = "radioactive" }
 })
+end
 
 
 data.raw["projectile"]["atomic-bomb-ground-zero-projectile"].action[1].radius = 3.5
@@ -121,6 +128,7 @@ data.raw["projectile"]["atomic-bomb-wave"].action[1].action_delivery.target_effe
 }
 
 
+if mods["Krastorio2"] then
 data.raw["projectile"]["antimatter-bomb-wave"].action[1].radius = 5
 data.raw["projectile"]["antimatter-bomb-wave"].action[1].action_delivery.target_effects = {
   {
@@ -142,6 +150,7 @@ data.raw["projectile"]["antimatter-bomb-wave"].action[1].action_delivery.target_
     damage = { amount = 950, type = "radioactive" },
   }
 }
+end
 
 
 for i = 5,10 do
@@ -156,6 +165,7 @@ end
 
 -- Make landmines immune to ALL damage. This will be bad for PvP scenarios, but I'll deal with that if it ever becomes relevant.
 for _, mine in pairs(data.raw["land-mine"]) do
+    mine.resistances = mine.resistances or {}
     for damageType, _ in pairs(data.raw["damage-type"]) do
         mine.resistances[damageType] = {
             type = damageType,
@@ -167,7 +177,7 @@ end
 if mods["Krastorio2"] then
     for _, wall in pairs(data.raw["wall"]) do
         table.insert(wall.resistances, {
-            type = kr-explosion,
+            type = "kr-explosion",
             percent = 100
         })
     end
