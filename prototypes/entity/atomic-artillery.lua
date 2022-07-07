@@ -152,14 +152,15 @@ data.raw["projectile"]["antimatter-bomb-wave"].action[1].action_delivery.target_
 }
 end
 
-
-for i = 5,10 do
-    table.insert(data.raw.technology["stronger-explosives-"..i].effects,
-    {
-        type = "ammo-damage",
-        ammo_category = "artillery-shell",
-        modifier = 0.2,
-    })
+if not mods["Krastorio2"] then -- I think K2 v1.3 adds this itself now, and something about my version breaks now
+    for i = 5,10 do
+        table.insert(data.raw.technology["stronger-explosives-"..i].effects,
+        {
+            type = "ammo-damage",
+            ammo_category = "artillery-shell",
+            modifier = 0.2,
+        })
+    end
 end
 
 

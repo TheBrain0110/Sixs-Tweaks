@@ -75,4 +75,23 @@ function data_util.replace_or_add_ingredient(recipe, old, new, amount, is_fluid)
   end
 end
 
+function data_util.tech_add_prerequisites(prototype_name, prerequisites)
+  local prototype = data.raw.technology[prototype_name]
+  if not prototype then return end
+  for _, new_prerequisite in pairs(prerequisites) do
+    local found = false
+    if prototype.prerequisites then
+      for _, old_prerequisite in pairs(prototype.prerequisites) do
+        if old_prerequisite == new_prerequisite then
+          found = true break
+        end
+      end
+    end
+    if not found then
+      prototype.prerequisites = prototype.prerequisites or {}
+      table.insert(prototype.prerequisites, new_prerequisite)
+    end
+  end
+end
+
 return data_util
