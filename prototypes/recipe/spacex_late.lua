@@ -15,3 +15,7 @@ data.raw.recipe["se-kr-rare-metal-substrate"].ingredients = {
     {"electronic-components", 4},
     {"rare-metals", 2}
 }
+
+data.raw["generator-equipment"]["se-rtg-equipment-2"].power = "1600kW"
+data.raw["generator-equipment"]["fusion-reactor-equipment"].power = "4800kW"
+data.raw["generator-equipment"]["antimatter-reactor-equipment"].power = "9600kW"
