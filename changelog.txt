@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.3
-Date: ????
+Date: 2022-07-24
   Changes:
+    - Add Kiln recipes to K2 advanced furnace
+    - I'm resisting the urge to add kiln recipes back to the Industrial Furnace because that's a very specific design choice they made. K2 Advanced Furnace should totally be fair game though.
+    - Bump modules slots on Adv furnace from 5 to 6 to make it a direct upgrade from Industrial furnace
+    - Add Industrial Furnace to Adv Furnace recipe to make it literally a direct upgrade
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 Date: 2022-07-14
