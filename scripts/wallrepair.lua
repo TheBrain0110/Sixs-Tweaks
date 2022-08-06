@@ -59,11 +59,12 @@ script.on_event(
     function(event) queueRepairs(event.created_entity, event.tick) end
 )
 
-script.set_event_filter(defines.events.script_raised_revive, {{filter = "type", type = "wall"}, {filter = "type", type = "gate"}})
-script.set_event_filter(defines.events.on_built_entity,{{filter = "type", type = "wall"}, {filter = "type", type = "gate"}})
-script.set_event_filter(defines.events.on_entity_cloned,{{filter = "type", type = "wall"}, {filter = "type", type = "gate"}})
-script.set_event_filter(defines.events.on_robot_built_entity,{{filter = "type", type = "wall"}, {filter = "type", type = "gate"}})
-script.set_event_filter(defines.events.script_raised_built,{{filter = "type", type = "wall"}, {filter = "type", type = "gate"}})
+local filters = {{filter = "type", type = "wall"}, {filter = "name", name = "se-spaceship-wall", invert = true, mode = "and"}, {filter = "type", type = "gate"}, {filter = "name", name = "se-spaceship-gate", invert = true, mode = "and"}}
+script.set_event_filter(defines.events.script_raised_revive, filters)
+script.set_event_filter(defines.events.on_built_entity, filters)
+script.set_event_filter(defines.events.on_entity_cloned, filters)
+script.set_event_filter(defines.events.on_robot_built_entity, filters)
+script.set_event_filter(defines.events.script_raised_built, filters)
 
 
 script.on_nth_tick(5, doRepairs)
