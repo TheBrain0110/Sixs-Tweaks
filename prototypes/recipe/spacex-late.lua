@@ -16,12 +16,7 @@ data.raw.recipe["se-kr-rare-metal-substrate"].ingredients = {
     {"rare-metals", 2}
 }
 
-data.raw["generator-equipment"]["se-rtg-equipment-2"].power = "1600kW"
-data.raw["generator-equipment"]["fusion-reactor-equipment"].power = "4800kW"
-data.raw["generator-equipment"]["antimatter-reactor-equipment"].power = "9600kW"
-
 -- I'm resisting the urge to add kiln recipes back to the Industrial Furnace because that's a very specific design choice they made. K2 Advanced Furnace should totally be fair game though.
 -- table.insert(data.raw["assembling-machine"]["industrial-furnace"].crafting_categories, "kiln")
 table.insert(data.raw["assembling-machine"]["kr-advanced-furnace"].crafting_categories, "kiln")
 data_util.replace_or_add_ingredient("kr-advanced-furnace", nil, "industrial-furnace", 1)
-data.raw["assembling-machine"]["kr-advanced-furnace"].module_specification.module_slots = 6

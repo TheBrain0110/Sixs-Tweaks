@@ -1,8 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.6
+Date: 2022-09-06
+  Changes:
+    - Buff K2 Advanced Assembling Machine a bit
+    - Module slots 4->6, base crafting speed 5->6
+---------------------------------------------------------------------------------------------------
 Version: 0.4.5
 Date: 2022-09-02
   Changes:
-    -  Make flat solar panels placeable on empty space
+    - Make flat solar panels placeable on empty space
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.4
 Date: 2022-08-06
