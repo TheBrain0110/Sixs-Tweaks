@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.8
+Date: 2022-09-17
+  Bugfixes:
+    - Add a check for the existence of recipes we're modifying, just in case something weird is missing.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.7
 Date: 2022-09-17
   Changes:

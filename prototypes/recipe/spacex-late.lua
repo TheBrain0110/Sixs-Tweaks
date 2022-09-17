@@ -11,10 +11,12 @@ data_util.replace_or_add_ingredient("se-vulcanite-rocket-fuel", "oxygen", "oxyge
 data_util.tech_add_prerequisites("kr-efficient-fabrication", {"kr-lithium-processing"})
 data_util.tech_add_prerequisites("se-kr-rare-metal-substrate", {"kr-efficient-fabrication"})
 
-data.raw.recipe["se-kr-rare-metal-substrate"].ingredients = {
-    {"electronic-components", 4},
-    {"rare-metals", 2}
-}
+if data.raw.recipe["se-kr-rare-metal-substrate"] then -- Somebody had an error about this missing somehow.
+    data.raw.recipe["se-kr-rare-metal-substrate"].ingredients = {
+        {"electronic-components", 4},
+        {"rare-metals", 2}
+    }
+end
 
 -- I'm resisting the urge to add kiln recipes back to the Industrial Furnace because that's a very specific design choice they made. K2 Advanced Furnace should totally be fair game though.
 -- table.insert(data.raw["assembling-machine"]["industrial-furnace"].crafting_categories, "kiln")
