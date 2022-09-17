@@ -52,19 +52,14 @@ script.on_event(
     {
     defines.events.on_built_entity,
     defines.events.on_robot_built_entity,
-	defines.events.on_entity_cloned,
-    defines.events.script_raised_built,
-    defines.events.script_raised_revive
     },
     function(event) queueRepairs(event.created_entity, event.tick) end
 )
 
 local filters = {{filter = "type", type = "wall"}, {filter = "name", name = "se-spaceship-wall", invert = true, mode = "and"}, {filter = "type", type = "gate"}, {filter = "name", name = "se-spaceship-gate", invert = true, mode = "and"}}
-script.set_event_filter(defines.events.script_raised_revive, filters)
 script.set_event_filter(defines.events.on_built_entity, filters)
-script.set_event_filter(defines.events.on_entity_cloned, filters)
 script.set_event_filter(defines.events.on_robot_built_entity, filters)
-script.set_event_filter(defines.events.script_raised_built, filters)
+-- Anything created by script we probably don't want to mess with. Often leads to crashes with the Ruins mod feeding nil entities to the event handler.
 
 
 script.on_nth_tick(5, doRepairs)
