@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.10
+Date: 2022-09-21
+  Combat Balancing:
+    - Imersite rifle ammo is now an upgrade from Uranium ammo, stacking damage types
+---------------------------------------------------------------------------------------------------
 Version: 0.4.9
 Date: 2022-09-17
   Bugfixes:

@@ -1,3 +1,5 @@
+local data_util = require("data_util")
+
 if not mods["Krastorio2"] then
     data:extend({
     {
@@ -7,6 +9,32 @@ if not mods["Krastorio2"] then
     })
 end
 
+if mods["Krastorio2"] then -- Make Imersite rounds an upgrade on top of uranium ammo
+    table.insert(data.raw["projectile"]["rifle-ammo-4"].action.action_delivery.target_effects, {
+        type = "damage",
+        damage = { amount = 6, type = "radioactive" }
+    })
+
+    data.raw["projectile"]["anti-material-rifle-ammo-4"].action.action_delivery.target_effects[2].action.action_delivery.target_effects = {
+      {
+        type = "damage",
+        damage = { amount = 125, type = "physical" },
+      },
+      {
+        type = "damage",
+        damage = { amount = 75, type = "radioactive" },
+      },
+      {
+        type = "damage",
+        damage = { amount = 50, type = "laser" },
+      }
+    }
+
+    data_util.replace_or_add_ingredient("uranium-rifle-magazine", "rifle-magazine", "armor-piercing-rifle-magazine", 1)
+    data_util.replace_or_add_ingredient("imersite-rifle-magazine", "rifle-magazine", "uranium-rifle-magazine", 1)
+    data_util.replace_or_add_ingredient("uranium-anti-material-rifle-magazine", "anti-material-rifle-magazine", "armor-piercing-anti-material-rifle-magazine", 1)
+    data_util.replace_or_add_ingredient("imersite-anti-material-rifle-magazine", "anti-material-rifle-magazine", "uranium-anti-material-rifle-magazine", 1)
+end
 
 data.raw["artillery-projectile"]["artillery-projectile"].action.action_delivery.target_effects[1].action.action_delivery.target_effects = {
     {
