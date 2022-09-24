@@ -24,3 +24,7 @@ end
 if mods["Logistic-Gun-Turret"] then
   data.raw.recipe["turret-interface"].ingredients[2] = { "logistic-chest-storage", 1 }
 end
+
+if mods["aai-industry"] then
+  data.raw["wall"]["steel-wall"].attack_reaction[1].reaction_modifier = 0.667
+end
