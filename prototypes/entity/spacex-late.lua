@@ -34,3 +34,7 @@ data.raw["assembling-machine"]["kr-advanced-assembling-machine"].crafting_speed 
 data.raw["generator-equipment"]["se-rtg-equipment-2"].power = "1600kW"
 data.raw["generator-equipment"]["fusion-reactor-equipment"].power = "4800kW"
 data.raw["generator-equipment"]["antimatter-reactor-equipment"].power = "9600kW"
+
+data.raw["accumulator"]["kr-energy-storage"].energy_source.buffer_capacity = "50GJ"
+data.raw["accumulator"]["kr-energy-storage"].energy_source.input_flow_limit = "100MW"
+data.raw["accumulator"]["kr-energy-storage"].energy_source.output_flow_limit = "500MW"
