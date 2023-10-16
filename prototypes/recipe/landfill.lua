@@ -6,4 +6,4 @@ data.raw["recipe"]["landfill-2"].ingredients =
 }
 data.raw["recipe"]["landfill-2"].localised_description = {"More efficient landfill made from mulch"}
 
-data.raw["recipe"]["landfill-sand"].normal.hidden = true -- Hide the duplicate version added by SE
+--data.raw["recipe"]["landfill-sand"].normal.hidden = true -- Hide the duplicate version added by SE
