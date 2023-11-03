@@ -22,3 +22,34 @@ end
 -- table.insert(data.raw["assembling-machine"]["industrial-furnace"].crafting_categories, "kiln")
 table.insert(data.raw["assembling-machine"]["kr-advanced-furnace"].crafting_categories, "kiln")
 data_util.replace_or_add_ingredient("kr-advanced-furnace", nil, "industrial-furnace", 1)
+
+-- bzmods adjust their omni core fragment amounts directly on the recipe after the fact, not via multiplier. Rebalance some of those...
+if mods["bztitanium"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "titanium-ore", "titanium-ore", 3)
+end
+if mods["bzlead"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "lead-ore", "lead-ore", 5)
+end
+if mods["bztungsten"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "tungsten-ore", "tungsten-ore", 2)
+end
+if mods["bzzirconium"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "zircon", "zircon", 4)
+end
+if mods["bzcarbon"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "flake-graphite", "flake-graphite", 6)
+end
+if mods["bzaluminum"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "aluminum-ore", "aluminum-ore", 8)
+end
+if mods["bztin"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "tin-ore", "tin-ore", 7)
+end
+if mods["bzgas"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "gas", "gas", 12, true)
+end
+
+-- BZores replace K2 rare metals in a lot of recipes, so need a lot less of them.
+if mods["Krastorio2"] and mods["bztitanium"] then
+    data_util.replace_or_add_result("se-core-fragment-omni", "raw-rare-metals", "raw-rare-metals", 1)
+end

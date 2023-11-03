@@ -267,3 +267,4 @@ ASALocalRun/
 *.code-workspace
 *.zip
 External Refs/
+.vscode/
