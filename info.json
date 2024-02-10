@@ -1,6 +1,6 @@
 {
   "name": "Sixs-Tweaks",
-  "version": "0.4.17",
+  "version": "0.5.0",
   "title": "Six's Tweaks",
   "author": "TheBrain0110",
   "homepage": "https://github.com/TheBrain0110/Sixs-Tweaks",
@@ -13,6 +13,7 @@
     "? space-exploration >= 0.6.86",
     "? space-exploration-postprocess >= 0.6.18",
     "? vtk-cannon-turret >=1.12.1",
+    "? nullius >= 1.9.0",
     "(?) bztitanium",
     "(?) bzlead",
     "(?) bztungsten",
