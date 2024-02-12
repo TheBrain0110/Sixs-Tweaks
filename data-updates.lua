@@ -31,4 +31,5 @@ end
 
 if mods["nullius"] then
   require("prototypes.entity.nullius")
+  require("prototypes.recipe.nullius")
 end
